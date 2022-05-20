@@ -20,28 +20,41 @@
     var CONFIG = {"hostname":"huasheng.cf","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="花生的博客">
-<meta property="og:url" content="http://huasheng.cf/index.html">
+  <meta name="description" content="心血来潮打算做个博客 服务器都买好了年费 结果突然看到利用github部署博客的教程（github不倒陪你到老）倒不是为了省钱，实在是购买的服务器不太安全。 一、环境准备1、安装Node.js 直接到官网上下载安装即可https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本) No">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次Hexo博客的搭建">
+<meta property="og:url" content="http://huasheng.cf/2022/05/20/hello-world/index.html">
 <meta property="og:site_name" content="花生的博客">
+<meta property="og:description" content="心血来潮打算做个博客 服务器都买好了年费 结果突然看到利用github部署博客的教程（github不倒陪你到老）倒不是为了省钱，实在是购买的服务器不太安全。 一、环境准备1、安装Node.js 直接到官网上下载安装即可https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本) No">
 <meta property="og:locale">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/343d28b9c9178b0b857abee140a668b1.png">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/3d5ab9f52a825335fea9df7e06acff9d-3034162.png">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/6351f0a208292c8b4c0489963b0d7296.png">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/90c3a63b27bb8ad3a9e6d097b759bf77.png">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/b9ae94584f281b39ca81f76dc030100b.png">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/9e5dde5c03e38f8a4cbecef0e0131bce.jpg">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/3194ad0a9d04d94c09485122932968f3.jpg">
+<meta property="article:published_time" content="2022-05-20T04:11:00.932Z">
+<meta property="article:modified_time" content="2022-05-20T09:04:13.616Z">
 <meta property="article:author" content="花生">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/343d28b9c9178b0b857abee140a668b1.png">
 
-<link rel="canonical" href="http://huasheng.cf/">
+<link rel="canonical" href="http://huasheng.cf/2022/05/20/hello-world/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>花生的博客</title>
+  <title>记一次Hexo博客的搭建 | 花生的博客</title>
   
 
 
@@ -139,9 +152,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -157,10 +171,9 @@
       <meta itemprop="name" content="花生的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/20/hello-world/" class="post-title-link" itemprop="url">记一次Hexo博客的搭建</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          记一次Hexo博客的搭建
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +197,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>  心血来潮打算做个博客 服务器都买好了年费 结果突然看到利用github部署博客的教程（github不倒陪你到老）倒不是为了省钱，实在是购买的服务器不太安全。</p>
+        <p>  心血来潮打算做个博客 服务器都买好了年费 结果突然看到利用github部署博客的教程（github不倒陪你到老）倒不是为了省钱，实在是购买的服务器不太安全。</p>
 <p>一、环境准备<br>1、安装Node.js</p>
 <p>直接到官网上下载安装即可<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
 <pre><code>Node.js (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)
@@ -268,95 +281,33 @@ hexo deploy 部署文章，可以用hexo d缩写
 
 <p>如果想自己换域名请看下篇文章</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/20/1/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="花生">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花生的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/20/1/" class="post-title-link" itemprop="url">Hexo博客更换域名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-05-20 15:53:21 / Modified: 17:03:53" itemprop="dateCreated datePublished" datetime="2022-05-20T15:53:21+08:00">2022-05-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>上篇的博客搭建教程完毕后想更换自己的域名的往下看</p>
-<p>由于github给的域名太长了（怕你们记不住）</p>
-<p>于是我去freenom薅了一大批自己喜欢的域名</p>
-<p><img src="/imgs/$%7Bfiilename%7D/yuming.png" alt="yuming">挺多中文域名的</p>
-<p>所以我就拿huasheng.cf这个域名来演示了</p>
-<p>我已经解析好dns了</p>
-<p><img src="/imgs/$%7Bfiilename%7D/yuming2.png" alt="yuming2"></p>
-<p>有不会的自行百度freenom注册域名教程或者等我下下下….篇</p>
-<p><img src="/imgs/$%7Bfiilename%7D/jiexi.png" alt="jiexi">内容那里解析你github的域名</p>
-<p>类型别搞错</p>
-<p>然后在myblog&#x2F;source&#x2F;目录内建立CNAME文件</p>
-<p>文件内容写你自己的域名 比如我就是huasheng.cf</p>
-<p>保存后记得推送到github</p>
-<p>之后去自己的项目内点击setting</p>
-<p><img src="/imgs/$%7Bfiilename%7D/githubyuming1.png" alt="githubyuming1"><img src="/$%7Bfiilename%7D/githubyuming2.png" alt="githubyuming2">修改成自己的域名即可</p>
-<p>然后访问域名即可访问自己的博客了。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/20/1/" rel="next" title="Hexo博客更换域名">
+      Hexo博客更换域名 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -409,6 +360,7 @@ hexo deploy 部署文章，可以用hexo d缩写
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.</span> <span class="nav-text">二、开始安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.1.</span> <span class="nav-text">1、安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96hexo%EF%BC%8C%E6%96%B0%E5%BB%BA%E5%AD%98%E5%82%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.2.</span> <span class="nav-text">2、初始化hexo，新建存储博客的文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E5%AE%89%E8%A3%85%E4%B8%80%E4%B8%8Bnpm"><span class="nav-number">1.3.</span> <span class="nav-text">3、进入文件夹，安装一下npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E7%AB%99%E7%82%B9"><span class="nav-number">1.4.</span> <span class="nav-text">4、启动服务站点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%8A"><span class="nav-number">1.5.</span> <span class="nav-text">2、将hexo博客站点上传到gitee上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%8C%87%E5%AE%9A%E4%BB%93%E5%BA%93%E8%B7%AF%E5%BE%84"><span class="nav-number">1.6.</span> <span class="nav-text">3、修改hexo配置文件指定仓库路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81%E9%85%8D%E7%BD%AEPages%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.7.</span> <span class="nav-text">5、配置Pages服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81GitHub%E4%B8%8A%E5%BB%BA%E7%AB%99%E8%AE%BF%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">四、GitHub上建站访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%8E%A8%E9%80%81%E7%AB%99%E7%82%B9%E5%88%B0github"><span class="nav-number">2.1.</span> <span class="nav-text">5.推送站点到github</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
