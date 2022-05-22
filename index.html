@@ -513,6 +513,135 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/22/strike/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="花生">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花生の筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/22/strike/" class="post-title-link" itemprop="url">mac系统如何安装cobaltstrike</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-22 14:30:58 / 修改时间：15:14:10" itemprop="dateCreated datePublished" datetime="2022-05-22T14:30:58+08:00">2022-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="资源下载"><a href="#资源下载" class="headerlink" title="资源下载"></a>资源下载</h1><table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cobalt Strike 4 破解版</td>
+<td><a target="_blank" rel="noopener" href="https://gitee.com/ssooking/cobaltstrike-cracked">码云 Gitee</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike 4 汉化包</td>
+<td><a target="_blank" rel="noopener" href="https://sqlsec.lanzoux.com/i7Xsdeqy84b">蓝奏云</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike 4 icns 原版图标</td>
+<td><a target="_blank" rel="noopener" href="https://sqlsec.lanzoux.com/iN64ieqyj1e">蓝奏云</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike 4 icns 圆角图标</td>
+<td><a target="_blank" rel="noopener" href="https://sqlsec.lanzoux.com/i9t7Ierdo0d">蓝奏云</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike 4 icns 圆角矩形图标（网友 th1e 制作分享）</td>
+<td><a target="_blank" rel="noopener" href="https://www.lanzoux.com/iCfzkg9p4dc">蓝奏云</a></td>
+</tr>
+<tr>
+<td>Cobalt Strike 4.1 主程序</td>
+<td><a target="_blank" rel="noopener" href="https://www.lanzoux.com/inhqhha6lrg">蓝奏云</a></td>
+</tr>
+</tbody></table>
+<p>虽然 CS4 已经有封装好的 macOS 版本的 app了：cobaltstrike4.0-macOS app.zip 但是默认是英文界面的，如果我们需要自定义加载汉化包的话，可以选择下载 <strong>cobaltstrike4.0-cracked.zip</strong> 这个文件</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15989661861128.png" alt="th1e制作的这个圆角矩形颜值也不错哦"></p>
+<h1 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h1><p>下载好 <strong>cobaltstrike4.0-cracked.zip</strong> 解压，然后将下载好的汉化包 <strong>CobaltstrikeCN.jar</strong> 以及图标文件 <strong>cobaltstrike.icns</strong> 拷贝到同级目录下，最终的目录效果如下：</p>
+<p>bash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">  cobaltstrike4.0-cracked tree</span><br><span class="line">.</span><br><span class="line">├── CobaltstrikeCN.jar  <span class="comment"># 汉化包</span></span><br><span class="line">├── LICENSE.txt</span><br><span class="line">├── NOTICE.TXT</span><br><span class="line">├── agscript</span><br><span class="line">├── c2lint</span><br><span class="line">├── cobaltstrike.auth</span><br><span class="line">├── cobaltstrike.bat</span><br><span class="line">├── cobaltstrike.icns <span class="comment"># 图标</span></span><br><span class="line">├── cobaltstrike.jar <span class="comment"># 主程序</span></span><br><span class="line">├── cobaltstrike.store</span><br><span class="line">├── crackInfo.txt</span><br><span class="line">├── icon.jpg</span><br><span class="line">├── libicmp.so</span><br><span class="line">├── libicmp64.so</span><br><span class="line">├── libtapmanager.so</span><br><span class="line">├── libtapmanager64.so</span><br><span class="line">├── peclone</span><br><span class="line">├── readme.txt</span><br><span class="line">├── start.bat</span><br><span class="line">├── start.sh</span><br><span class="line">├── teamserver</span><br><span class="line">└── third-party</span><br><span class="line">    ├── README.winvnc.txt</span><br><span class="line">    ├── winvnc.x64.dll</span><br><span class="line">    └── winvnc.x86.dll</span><br><span class="line"></span><br><span class="line">1 directory, 24 files</span><br></pre></td></tr></table></figure>
+
+<h1 id="命令启动"><a href="#命令启动" class="headerlink" title="命令启动"></a>命令启动</h1><p>首先我的 CS 的存放路径为:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  cobaltstrike4.0-cracked <span class="built_in">pwd</span></span><br><span class="line">/Users/sec/Documents/Sec/cobaltstrike4.0-cracked</span><br></pre></td></tr></table></figure>
+
+<p>所以最终只需要如下命令即可启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /Users/sec/Documents/Sec/cobaltstrike4.0-cracked &amp;&amp; java -Xdock:icon=cobaltstrike.icns -Dfile.encoding=UTF-8 -javaagent:CobaltStrikeCN.jar -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar</span><br></pre></td></tr></table></figure>
+
+<p>大家看填写自己对于的 CS 存放路径，本地命令行先启动看看：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15951623571403.png" alt="img"></p>
+<p>确认启动无误后接下来就可以使用 macOS 自带的 <strong>自动操作 automator.app</strong> 来创建一个应用程序了。</p>
+<h1 id="制作APP"><a href="#制作APP" class="headerlink" title="制作APP"></a>制作APP</h1><p><img src="/../imgs/$%7Bfiilename%7D/15951624882637.png" alt="img"></p>
+<p>首先打开自动操作，选择左下角的「新建文稿」，选择文稿类型为「应用程序」，点击「选取」，左侧列表中找到<code>运行Shell脚本</code>然后拖入进去：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15951626159755.png" alt="img"></p>
+<p>把上文中的命令行模拟启动对应的命令粘贴进来，点击右上角的「运行」测试一下看看能不能成功启动：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15951626806858.png" alt="img"></p>
+<p>OK 测试应该是没有问题的，然后将 CS 关掉，<code>command</code>+<code>s</code>保存一下，保存的文件格式选择「应用程序」，自定义命名一下，然后保存到「应用程序」中：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15951627966316.png" alt="img"></p>
+<p>然后就可以在「启动台 LaunchPad」中找到这个孤零零的应用程序了，点击一下就可以成功启动 CS 了：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15951628527055.png" alt="img"></p>
+<p>当然这么丑的图标，国光我是看不下去的，下面来使用上文中下载的 CS 图标文件。</p>
+<p>在「应用程序」文件夹中找到我们刚刚制作的「Cobalt Strike 4」应用程序，「右键」点击「显示简介」，然后将下载好的<code>icns</code>图标文件拖入到简介的左上角：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/15951629707609.png" alt="img"></p>
+<p>最后的效果如下：</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/1595163052585.png" alt="img"></p>
+<p>OK 美化成功，现在就可以在 mac 下优雅地启动 CS 了~~（吐槽一下 CS 图标和 macOS 下其他图标好违和呀）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/21/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -908,81 +1037,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/20/Typora%E7%A0%B4%E8%A7%A3%E7%89%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="花生">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花生の筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/20/Typora%E7%A0%B4%E8%A7%A3%E7%89%88/" class="post-title-link" itemprop="url">Typora破解版</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-20 19:50:24" itemprop="dateCreated datePublished" datetime="2022-05-20T19:50:24+08:00">2022-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-21 14:20:31" itemprop="dateModified" datetime="2022-05-21T14:20:31+08:00">2022-05-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Typora安装激活包<br>下载链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1K-uRpJrBNv0evvUo1qtt4w">https://pan.baidu.com/s/1K-uRpJrBNv0evvUo1qtt4w</a><br>提取码：thmb</p>
-<p>使用教程：<a target="_blank" rel="noopener" href="http://www.itmind.net/14627.html">http://www.itmind.net/14627.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1052,7 +1106,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1065,7 +1119,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
