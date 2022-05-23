@@ -427,6 +427,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/23/Android%E8%8E%B7%E5%BE%97%E7%82%B9%E5%87%BB%E5%B1%8F%E5%B9%95%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%9D%90%E6%A0%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="花生">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花生の筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/23/Android%E8%8E%B7%E5%BE%97%E7%82%B9%E5%87%BB%E5%B1%8F%E5%B9%95%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%9D%90%E6%A0%87/" class="post-title-link" itemprop="url">Android获得点击屏幕的位置坐标</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-23 16:47:05 / 修改时间：17:25:48" itemprop="dateCreated datePublished" datetime="2022-05-23T16:47:05+08:00">2022-05-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>通过</p>
+<p>adb shell getevent</p>
+<p>命令获得点击屏幕的位置坐标的方法：</p>
+<p>第一步：计算比例</p>
+<p>首先通过命令</p>
+<p>adb shell getevent -p | grep -e “0035” -e “0036”</p>
+<p>获得event 体系里 宽（0035）和高（0036）</p>
+<p>以当前我使用的手机为例，命令会输出如下信息：</p>
+<p>0035  : value 0, min 0, max 1602, fuzz 0, flat 0, resolution 0<br>0036  : value 0, min 0, max 2503, fuzz 0, flat 0, resolution 0</p>
+<p>注释：如果是windows环境，没有“|” 管道 和 grep 命令，可以直接用</p>
+<p>adb shell getevent -p</p>
+<p>然后在打印信息里自己过滤 0035 和 0036 找对应如上两行信息</p>
+<p>我们需要的就是 其中的max</p>
+<p>0035（宽） max 1602</p>
+<p>0036（高） max 2503</p>
+<p>手机屏幕的分辨率是已知的，还以当前我使用的手机为例</p>
+<p>手机屏幕分别率是1080p即：1080（宽） * 1920（高）</p>
+<p>计算比例：</p>
+<p>rateW &#x3D; 1080(手机屏幕的宽) &#x2F; 1602(event里0035的max) &#x3D; 0.674</p>
+<p>rateH &#x3D; 1920(手机屏幕的高) &#x2F; 2503(event里0036的max) &#x3D; 0.767</p>
+<p>第二步：点击屏幕计算点击位置的坐标</p>
+<p>执行命令</p>
+<p>adb shell getevent | grep -e “0035” -e “0036”</p>
+<p>以当前我使用的手机为例，命令会输出如下信息：</p>
+<p>&#x2F;dev&#x2F;input&#x2F;event0: 0003 0035 00000341<br>&#x2F;dev&#x2F;input&#x2F;event0: 0003 0036 000008ec</p>
+<p>把0035和0036后面的位置数据从16进制转化为10进制</p>
+<p>width &#x3D; 0x341 &#x3D; 3<em>16</em>16 + 4*16 + 1 &#x3D; 833</p>
+<p>height &#x3D; 0x8ec &#x3D; 8<em>16</em>16 + 14*16 + 12 &#x3D; 2284</p>
+<p>这是在event体系里的位置，将其转化为屏幕位置</p>
+<p>screenW &#x3D; width<em>rateW &#x3D; 833</em>0.674 &#x3D; 561</p>
+<p>screenH &#x3D; height<em>rateH &#x3D; 2284</em>0.767 &#x3D; 1751</p>
+<p>终于算出来了</p>
+<p>刚刚点击的屏幕位置坐标就是（561, 1751）</p>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p>当然还有其他很多方法获得点击屏幕位置坐标。</p>
+<p>如果有点击页面的源码，嗯嗯，你可以打印log。TouchEvent里面的位置直接就是你在屏幕上的点击位置</p>
+<p>或者</p>
+<p>用自动化测试工具，直接输出点击位置坐标，</p>
+<p>当然也是OK滴</p>
+<p>adb shell getevent 只是其中之一方法，</p>
+<p>它的使用就是没有源码，也木有自动化测试工具时。</p>
+<p>一旦算出比例后，</p>
+<p>每次计算坐标位置的计算量也不算大。可以忍啦^_^</p>
+<p>16转10进制工具<a target="_blank" rel="noopener" href="https://miniwebtool.com/zh-cn/hex-to-decimal-converter/?number=000008ec">https://miniwebtool.com/zh-cn/hex-to-decimal-converter/?number=000008ec</a></p>
+<p>点击屏幕坐标命令 adb shell input tap x y</p>
+<p>开启无障碍</p>
+<p>input tap 903 600</p>
+<p>input tap 934 276</p>
+<p>input tap 743 1500</p>
+<p>需要分辨率1080x1920</p>
+<p>0035（宽） max 1080</p>
+<p>0036（高） max 2280</p>
+<p>总结</p>
+<p>先输入</p>
+<p>adb shell getevent -p | grep -e “0035” -e “0036”</p>
+<p>查看0035（宽） max 1080</p>
+<p>0036（高） max 2280值</p>
+<p>再用分辨率除以值得到得数</p>
+<p>adb shell getevent | grep -e “0035” -e “0036”</p>
+<p>再用点击坐标的10进制乘以得数便是坐标</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/23/%E6%9C%A8%E9%A9%AC%E6%8D%86%E7%BB%91%E6%B5%81%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -877,87 +1004,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/05/20/%E8%AE%B0%E4%B8%80%E6%AC%A1ssr%E5%88%B6%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="花生">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花生の筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/20/%E8%AE%B0%E4%B8%80%E6%AC%A1ssr%E5%88%B6%E4%BD%9C/" class="post-title-link" itemprop="url">记一次ssr制作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-20 21:15:34" itemprop="dateCreated datePublished" datetime="2022-05-20T21:15:34+08:00">2022-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-21 12:55:34" itemprop="dateModified" datetime="2022-05-21T12:55:34+08:00">2022-05-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>wget -N –no-check-certificate <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/luyiming1016/ladderbackup/master/ssrmu.sh">https://raw.githubusercontent.com/luyiming1016/ladderbackup/master/ssrmu.sh</a> &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/20/%E8%AE%B0%E4%B8%80%E6%AC%A1ssr%E5%88%B6%E4%BD%9C/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1027,7 +1073,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
