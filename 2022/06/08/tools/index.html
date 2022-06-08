@@ -27,11 +27,18 @@
 <meta property="og:site_name" content="花生の筆記">
 <meta property="og:description" content="1chmod -R 777 ~&#x2F;pdtools &amp;&amp; cd ~&#x2F;pdtools &amp;&amp; .&#x2F;install">
 <meta property="og:locale">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-fdccca6faa72f3589b27ca6d766c5347_720w.jpg">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-2f8051ac0bb63e5d60d8893722221749_720w.jpg">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-ccfb21721f311af89358ba105bda0367_720w.jpg">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-c5ee13b8c30a7f2a7836abbae9ef5227_720w.jpg">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-ffdcf02da8cd5630a323ee6614ab0a7d_720w.jpg">
+<meta property="og:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-1e994a8073ced32928c6f3940e45ea77_720w.jpg">
 <meta property="article:published_time" content="2022-06-08T10:57:47.000Z">
-<meta property="article:modified_time" content="2022-06-08T11:00:10.269Z">
+<meta property="article:modified_time" content="2022-06-08T13:17:56.126Z">
 <meta property="article:author" content="花生">
 <meta property="article:tag" content="渗透攻击">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://huasheng.cf/imgs/$%7Bfiilename%7D/v2-fdccca6faa72f3589b27ca6d766c5347_720w.jpg">
 
 <link rel="canonical" href="http://huasheng.cf/2022/06/08/tools/">
 
@@ -223,7 +230,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-06-08 18:57:47 / 修改时间：19:00:10" itemprop="dateCreated datePublished" datetime="2022-06-08T18:57:47+08:00">2022-06-08</time>
+              <time title="创建时间：2022-06-08 18:57:47 / 修改时间：21:17:56" itemprop="dateCreated datePublished" datetime="2022-06-08T18:57:47+08:00">2022-06-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,7 +264,40 @@
 
 <span id="more"></span>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wget -O headers.deb http://old.kali.org/kali/pool/main/l/linux/linux-headers-5.10.0-kali3-amd64_5.10.13-1kali1_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载对应内核头依赖保存为 common.deb</span></span><br><span class="line">wget -O common.deb http://old.kali.org/kali/pool/main/l/linux/linux-headers-5.10.0-kali3-common_5.10.13-1kali1_all.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装辅助 deb 安装工具</span></span><br><span class="line">apt install gdebi -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先安装 common 内核头依赖</span></span><br><span class="line">gdebi common.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再安装主角 内核头文件</span></span><br><span class="line">gdebi headers.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证是否安装成功 （这个时候应该提示已经安装成功了）</span></span><br><span class="line">apt install linux-headers-$(<span class="built_in">uname</span> -r)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">wget -O headers.deb http://old.kali.org/kali/pool/main/l/linux/linux-headers-5.10.0-kali3-amd64_5.10.13-1kali1_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载对应内核头依赖保存为 common.deb</span></span><br><span class="line">wget -O common.deb http://old.kali.org/kali/pool/main/l/linux/linux-headers-5.10.0-kali3-common_5.10.13-1kali1_all.deb</span><br><span class="line"><span class="comment">#下载kbuild文件</span></span><br><span class="line">wget -O kbuild.deb </span><br><span class="line">http://old.kali.org/kali/pool/main/l/linux/linux-kbuild-5.10_5.10.46-4kali1_amd64.deb</span><br><span class="line"></span><br><span class="line">安装顺序是：kbuild、common、headers</span><br><span class="line"><span class="comment">#先安装kbuild</span></span><br><span class="line">dpkg -i kbuild.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再安装 common 内核头依赖</span></span><br><span class="line">dpkg -i common.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再安装主角 内核头文件</span></span><br><span class="line">dpkg -i headers.deb</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>还有</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install linux-compliler-gcc-10-x86</span><br></pre></td></tr></table></figure>
+
+<p>如果安装不上就</p>
+<p>wget -O gcc.deb<br><a target="_blank" rel="noopener" href="http://debian.mirror.ac.za/debian/pool/main/l/linux/linux-compiler-gcc-10-x86_5.10.106-1_amd64.deb">http://debian.mirror.ac.za/debian/pool/main/l/linux/linux-compiler-gcc-10-x86_5.10.106-1_amd64.deb</a></p>
+<p>之后。。。。</p>
+<p>你就会遇到下一个大的报错了。</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/v2-fdccca6faa72f3589b27ca6d766c5347_720w.jpg" alt="img"></p>
+<h2 id="一个新的大坑出现了"><a href="#一个新的大坑出现了" class="headerlink" title="一个新的大坑出现了"></a>一个新的大坑出现了</h2><p>1、要解决上面的问题，需要对parallels tools安装文件进行修改，首先对关键文件进行解压，先进入kmods目录，解压prl_mod.tar.gz ：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root/pt/kmods</span><br><span class="line">tar -zxvf prl_mod.tar.gz </span><br></pre></td></tr></table></figure>
+
+<p>2、编辑inode.c文件，它的路径是prl_fs&#x2F;SharedFolders&#x2F;Guest&#x2F;Linux&#x2F;prl_fs&#x2F;inode.c，在第一行插入如下两行代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> segment_eq(a, b) (b)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> USER_DS 1</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgs/$%7Bfiilename%7D/v2-2f8051ac0bb63e5d60d8893722221749_720w.jpg" alt="img"></p>
+<p>3、编辑prl_fs_freeze.c文件，该文件的路径是：prl_fs_freeze&#x2F;Snapshot&#x2F;Guest&#x2F;Linux&#x2F;prl_freeze&#x2F;prl_fs_freeze.c，在文件第一行插入如下代码</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;linux/blkdev.h&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgs/$%7Bfiilename%7D/v2-ccfb21721f311af89358ba105bda0367_720w.jpg" alt="img"></p>
+<p>4、编辑prl_fs&#x2F;Makefile文件，路径为prl_fs&#x2F;SharedFolders&#x2F;Guest&#x2F;Linux&#x2F;prl_fs&#x2F;Makefile，在文件的第一行插入如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KBUILD_EXTRA_SYMBOLS := /usr/lib/parallels-tools/kmods/prl_tg/Toolgate/Guest/Linux/prl_tg/Module.symvers</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgs/$%7Bfiilename%7D/v2-c5ee13b8c30a7f2a7836abbae9ef5227_720w.jpg" alt="img"></p>
+<p>5、编辑kmod&#x2F;Makefile文件，路径为prl_vid&#x2F;Video&#x2F;Guest&#x2F;Linux&#x2F;kmod&#x2F;Makefile，在文件第一行插入如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KBUILD_EXTRA_SYMBOLS := /usr/lib/parallels-tools/kmods/prl_tg/Toolgate/Guest/Linux/prl_tg/Module.symvers</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgs/$%7Bfiilename%7D/v2-ffdcf02da8cd5630a323ee6614ab0a7d_720w.jpg" alt="img"></p>
+<p>6、重新打包parallels tools安装文件，在kmods目录下执行：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm prl_mod.tar.gz</span><br><span class="line">tar -zcvf prl_mod.tar.gz .</span><br></pre></td></tr></table></figure>
+
+<p>7、重新运行<strong>install-gui</strong>，一路回车下来你会发现见到了久违的Congratulations！按照要求重启即可。</p>
+<p><img src="/../imgs/$%7Bfiilename%7D/v2-1e994a8073ced32928c6f3940e45ea77_720w.jpg" alt="img"></p>
 
     </div>
 
@@ -338,6 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E5%A4%A7%E5%9D%91%E5%87%BA%E7%8E%B0%E4%BA%86"><span class="nav-number">1.</span> <span class="nav-text">一个新的大坑出现了</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
