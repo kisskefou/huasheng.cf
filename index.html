@@ -531,10 +531,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-06-07 13:36:50 / 修改时间：13:40:04" itemprop="dateCreated datePublished" datetime="2022-06-07T13:36:50+08:00">2022-06-07</time>
+              <time title="创建时间：2022-06-07 13:36:50" itemprop="dateCreated datePublished" datetime="2022-06-07T13:36:50+08:00">2022-06-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-08 17:19:53" itemprop="dateModified" datetime="2022-06-08T17:19:53+08:00">2022-06-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -558,26 +564,14 @@
       
           <p>安装kali2020.2版本，需要从国外源下载安装包，由于网络原因安装失败</p>
 <p>此时可以选择换源安装，重新走一遍之前的安装流程，到下图这一步时，<strong>正在配置apt，</strong></p>
-<p>建议选择一个稳定的网络下进行换源安装</p>
-<p>使用快捷键【Ctrl+Alt+F2】切换到tty2终端，进入之后敲回车键进入新终端，</p>
-<p>在终端中输入如下命令,切换到chroot，修改镜像源文件，重新配置镜像源：</p>
-<p>【chroot &#x2F;target】</p>
-<p>【nano &#x2F;etc&#x2F;apt&#x2F;sources.list】  </p>
-<p>将默认的两个<strong>deb</strong>用**#**注释掉(下图2)，</p>
-<p>再添加新的源，本次使用的是阿里云的镜像源，命令如下(下图3)：</p>
-<p>【deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/kali">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib】</p>
-<p>输入完成之后按【Ctrl+O】保存，会弹出文件名已经写入。敲回车，再【Ctrl+X】退出。</p>
-<p><img src="/../imgs/$%7Bfiilename%7D/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MjkzNTM0,size_16,color_FFFFFF,t_70-4580345.png" alt="img"></p>
-<p>再使用如下命名更新镜像源和系统：</p>
-<p>【apt update &amp;&amp; apt ungrade】</p>
-<p>此时已经换源成功，正在更新，等更新完成，按【Ctrl+Alt+F5】切换到图形终端</p>
-<p><img src="/../imgs/$%7Bfiilename%7D/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MjkzNTM0,size_16,color_FFFFFF,t_70-20220607133923808-4580365.png" alt="img"></p>
-<p>在这一步中一定要勾选最下面一个扩展工具，否则进入系统之后只有基本的命令，点击继续，正在下载安装文件，等待文件安装完成即可</p>
-<p>安装完成，进入系统，本次安装大概花了接近两个小时</p>
-<p>kali2020默认root没有密码，使用创建的账户进入系统之后，使用【su -】命令切换到root，再使用【sudo passwd root】命令创建密码。</p>
-<p>建议使用阿里云等商业公司的镜像源，部分大学的镜像源文件比较旧，不能一次性成功，还是会安装失败，必须得多次安装才行。</p>
-<p>附其他版本kali镜像下载链接：<a target="_blank" rel="noopener" href="http://old.kali.org/kali-images/">http://old.kali.org/kali-images/</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/06/07/kali%E5%AE%89%E8%A3%85%E6%97%B6%E5%87%BA%E7%8E%B0%E9%80%89%E6%8B%A9%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
