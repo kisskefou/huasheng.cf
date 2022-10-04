@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"huasheng.cf","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计网基础第二章Day2">
+<meta property="og:url" content="http://huasheng.cf/2022/09/22/%E8%AE%A1%E7%BD%91%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:site_name" content="花生の筆記">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-09-22T00:13:24.000Z">
+<meta property="article:modified_time" content="2022-09-29T00:21:08.050Z">
+<meta property="article:author" content="花生">
+<meta property="article:tag" content="计网基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://huasheng.cf/2022/09/22/%E8%AE%A1%E7%BD%91%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>计网基础第二章Day2 | 花生の筆記</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">花生の筆記</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://huasheng.cf/2022/09/22/%E8%AE%A1%E7%BD%91%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="花生">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花生の筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计网基础第二章Day2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-22 08:13:24" itemprop="dateCreated datePublished" datetime="2022-09-22T08:13:24+08:00">2022-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-29 08:21:08" itemprop="dateModified" datetime="2022-09-29T08:21:08+08:00">2022-09-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%BD%91%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计网基础</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="3d4af117f326ffb536dbe264a85981dd660801e54e90cb9742b6cb26d7ca9dd2">f36f7ba314848c446e88c79cb1b97379f61215fc597b8fc35a46ca16788b246e74135a6df42bf975608b062bbe26f3a01d16b97f0ee399cb75fd5ff324364dd8a31ae4d0118a4bdd275e97230305905d4324fa2bdd5ddc5c07aceb1255775d016bba5317aa8de31e398e47ad973f760e79e6be4af01db5e0eebaa5b154329aa2bc2333cad691f7f121077532cd3457865231c7f77dc0aca81c535c8270d2840814490cb55a4695e002456aa78fc60539d867fd5159ff8a855745bb5eadf4f94e2cf0f9309d80073c69a5c8b1498398977757c76a64a42b4a0251fb485817e02b80e6573aa4efcaa5636fb75a780953171eacee9455cd06c7f00f7e05b6e6ae7f93a8da5a2bfc077270ea8dd49c1f7d229de72babbf6eb61133fb391a54763d7a4cd7a4b23889e0cc29df4133d57febcc9f16b7e15aed2ffde318ae0102afccd3587497a8758d26de9c170507c637eea05cbeba08ecdac593265e47abc4fcfb34fe38b5db1fe1ed2650f654b4f1f16c184c8f5d89867d06df1435e45305c9a7eb0fc9cc24844e2bb0a89bdf4ecb2007d0d729cd944e682dd25dd6455fedcd1104c2c0519119f2fdcf654ce64b6ba1684861cf2e5ac4df8c6d0fd2a1a854c4cc0b2d0c15ba5a0f9e767098b12d91b8eeecdfe9a23399d1a3de4548262d1ba76bd8491d5078b00a6167d79e3ce59ca500035208ce409ceb086aebff5d2f95c7e2fab2f05387d5fe42ee2ccfd3ed571290143b50236f14157d59272e251916f0474c9b3cf8ef904023cd969afb4a011683160e50a8f0844f84ec3f1b7ee56af98de4d08c5960b478e2aa1eeedb2c41411a0a5e60a65bda3c73eceb3ae62106b39df2b062cee06ac5e359e362d59659e6da11e078bc533044ac3beeb7fb4d089a6d992ada62defac96ff198adf14594a63027821f7799a1d859a475940889784c4e66b8e89e5ae5b0e2c0c6da3d718b44085a95da2ff40d7521bfa5e823addab8f0436bb9147b093879c9cac388acda56e2febd48d3c31b8aa9c4b1455d6f43c4059354ef6250749ae8b8028f885dc86e128daee0858844bba3574a95431b0b998ab652d023f05a83119e77c9a4c279c79e0ff9dea32adb71f1cdc455cfd9650bd4df6d088a46be5bdf63c68fc6ea057ca91a4f0d4b9db41a94540da90d13a35e0420f6fe3a725044924194313e60953e13f5dabfbd782b76893c5db4811b630d8f1256f9218e7958d94633161add45110cdd8d97f83bf79e0301faa7d2246d03143f97a917114a2fb7480626a1f1840597b773eff6bf6d7d190e5e25468007befbcc52024a8c3535fa04f190d36324d7fa65421fc89ceb3749fe60fd9a3d44b7c79d24be4dd469c58b5daafc98b8d2cfa30b90e5a42458f4b68869bab670aabf196ded2f460090f931566c9432372ce73ed431f51b0d3442ea40dfdb04bc9ceccd7acf4ad8887a35d8e6c36ab164b36df25e18d2726cc924bbc07b295ea4894fd2c4081e4ca7eedf7db6be05e4510f30f424da9b8f78281edea5adc76c81a9fb20d4201f3d5040917bc81b4e452154e38b692981c0855052773b40989176ff5b2822fe0337b5dd0a00cb26e63e298652859694a05646782fa701c4a7b5ce2b23861b4eb36a083cb56928d3abc1d2ecdb9399dacd10a89006c009e94eb0f11d0038e5773b7fca6599d538536e0bc217ec696a76574ceb156ca19439f3c4426e844edc40a02f2b74445423982f5d38977afc0de63ccf5a01b05be9bfbb16611d85aecaaab446a0aa273b085d66321647adbc0fe3d653447b3571fa4a3026a411d3f742e1551be91ace444e2bfeec0612643104896b9821e953780e7353181fa612e7682db1e181079e5b1af40a6d1dd3542008ddf9ec56848cca650e651ceb01c0c3132bad1e2e879d164f6b753a9a7299f9ab6fe64bbd94d6efaa5e94cddb6800bd899910e520b3167eb150d0f9472717a5b18b968dc634562ff7828cf507288f73b10e3e5f12accac123a7e26b73cb42eab6ba6085701fcfdca3aa61c60d9e00fddd5426b55b0791247d86f8d874190f614558c473b2dcaafc63147b0efbcc3bdf0f312821ae213da692aaaa52eb9db2716249b6687cdc87502ce07d795753b3414718c36894fb7c5c272eb70be9966c7f6e4d52dce275878830786cee7e8f8333300506aa5d39527d5fc210233a29da2181bde83ac37f0918ac444ef3f4d190919a2a4ad2af68583e9757b38265be5b4aefbed93d3785e16dc6aecbb0b20d09b66a9b44d183ada502dbc6037275aa652650cd9749b46083b6afb4735118e1397857247d085f9febe61bc1c97565dc95d3ae8fbfb5c4912e49131ec23f629ac8b37e621f57e0e2ac28181204b93861bae10ea645840395486e0e07540606443790febe513507464e722d07294388e03122ab93bb2c480e2b2ead45e58d78c0df24e148bc12d38f19d7c6ec6caa446c4fa88d7c0804a3c82108182245592b5f1982bef42657eefdf8a9df0e1a1f60b0c6b7eba7475d3f4c2b50782eaf4f3e5eae96656fe370f4d7f06ad0f13cc076e9030f7c01b556617b57f3840d7ba2fffbe8d256132717381fadc79023431a6260a73e5b58fdff137b1e57f510de6457217de039f0ab96c6808f9a1fbf3d9a7ee4acf38c030e71d7655ce9e7e831c6a5e84f7fb1ba8b75be516d76742c38aee9f5ac46b135f14c1f25ca53c49bc5aba1dfe60622662c8461e48219719afa24ed04a19183</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码以查看笔记</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%BD%91%E5%9F%BA%E7%A1%80/" rel="tag"># 计网基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/21/hexo%E6%96%87%E7%AB%A0%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81/" rel="prev" title="hexo文章设置密码">
+      <i class="fa fa-chevron-left"></i> hexo文章设置密码
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/23/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" rel="next" title="信息技术day2">
+      信息技术day2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">花生</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">花生</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("05/20/2022 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
