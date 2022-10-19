@@ -1,0 +1,80 @@
+/* 文章页H1-H6图标 显示H1~H6 */
+
+@-webkit-keyframes ccc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(-1turn);
+        transform: rotate(-1turn)
+    }
+}
+@keyframes ccc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(-1turn);
+        transform: rotate(-1turn)
+    }
+}
+#content-inner.layout h1::before {
+    color: #eaeaea ;
+    margin-left: -1.55rem;
+    font-size: 1.3rem;
+    margin-top: -0.23rem;
+    content:'H₁'
+}
+#content-inner.layout h2::before {
+    color: #eaeaea ;
+    margin-left: -1.55rem;
+    font-size: 1.1rem;
+    margin-top: -0.12rem;
+    content:'H₂'
+}
+#content-inner.layout h3::before {
+    color: #eaeaea ;
+    margin-left: -1.22rem;
+    font-size: 0.95rem;
+    margin-top: -0.09rem;
+    content:'H₃'
+}
+#content-inner.layout h4::before {
+    color: #eaeaea ;
+    margin-left: -1.05rem;
+    font-size: 0.8rem;
+    margin-top: -0.09rem;
+    content:'H₄'
+}
+#content-inner.layout h5::before {
+    color: #eaeaea ;
+    margin-left: -0.9rem;
+    font-size: 0.7rem;
+    margin-top: 0.0rem;
+    content:'H₅'
+}
+#content-inner.layout h6::before {
+    color: #eaeaea ;
+    margin-left: -0.9rem;
+    font-size: 0.66rem;
+    margin-top: 0.0rem;
+    content:'H₆'
+}
+
+
+/* 文章页H1-H6图标 显示H1~H6 */
+
+/*文章标题右侧显示锚点*/
+#article-container.post-content .headerlink {
+    float: right;
+    font-size: 90%;
+    padding-top: 4px;
+}
+#article-container.post-content .headerlink::before {
+    content: '\f0c1';
+    font-family: "Font Awesome 6 Free";
+}
+
+
