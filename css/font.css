@@ -1,0 +1,27 @@
+@font-face{
+    font-family: 'longyan';
+    font-display: swap;
+    src: url('../font/longyanti.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: 'riluoxingchen';
+    font-display: swap;
+    src: url('../font/riluoxingchen.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: 'xiahang';
+    font-display: swap;
+    src: url('../font/xiahang.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: 'qiuhong';
+    font-display: swap;
+    src: url('../font/qiuhong.ttf') format("truetype");
+}
+
+body {
+    font-family: 'qiuhong';
+}
