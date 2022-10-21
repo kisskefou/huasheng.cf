@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>微信美化之字体修改</title>
+      <link href="/2022/10/21/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/"/>
+      <url>/2022/10/21/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info modern"><p>想要美化需要用到一个定制的微信</p></div><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我美化流程</button></li><li class="tab active"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><details class="folding-tag" cyan><summary> 点我查看准备工具 </summary>              <div class='content'>              <p>1.注入了微信净化插件的定制微信</p><p>2.一个字体 这里我就不乱发了 侵权后果严重</p>              </div>            </details><h1 id="一-创建字体文件夹"><a href="#一-创建字体文件夹" class="headerlink" title="一.创建字体文件夹"></a>一.创建字体文件夹</h1><p>1.打开定制微信的沙盒目录</p><p>2.创建一个文件夹 文件名为:WeChatPureFont</p><p><img src="/../imgs/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/4611666325153_.pic.jpg" alt="4611666325153_.pic"></p><p>3.创建后将字体放入此文件夹</p><p><img src="/../imgs/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/4621666325194_.pic.jpg" alt="4621666325194_.pic"></p><p>4.打开微信—我—插件—微信净化—修改字体进入配置页面</p><p><img src="/../imgs/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/4631666325255_.pic.jpg" alt="4631666325255_.pic"></p><p>点击刷新本地字体后进入字体列表</p><p><img src="/../imgs/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/4641666325306_.pic.jpg" alt="4641666325306_.pic"></p><p>选择后重启应用即可生效</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="test4-2"><p><img src="/../imgs/%E5%BE%AE%E4%BF%A1%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B9/4601666324899_.pic.jpg" alt="4601666324899_.pic"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信美化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信息技术-表格</title>
+      <link href="/2022/10/21/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/"/>
+      <url>/2022/10/21/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-课程表的制作"><a href="#一-课程表的制作" class="headerlink" title="一.课程表的制作"></a>一.课程表的制作</h1><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看制作流程</button></li><li class="tab active"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><div class="tip warning faa-horizontal animated"><p>使用word做表格</p></div><h1 id="1-在插入菜单选中表格按钮"><a href="#1-在插入菜单选中表格按钮" class="headerlink" title="1.在插入菜单选中表格按钮"></a>1.在插入菜单选中表格按钮</h1><h3 id="1-选择法"><a href="#1-选择法" class="headerlink" title="(1)选择法"></a>(1)选择法</h3><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.46.30.png" alt="截屏2022-10-21 上午8.46.30"></p><p>课程表有10行7列 那我们就这样选择</p><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.48.53.png" alt="截屏2022-10-21 上午8.48.53"></p><p>如果行数不够可以点击加号以增加行数</p><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.49.43.png" alt="截屏2022-10-21 上午8.49.43"></p><h3 id="2-插入法"><a href="#2-插入法" class="headerlink" title="(2)插入法"></a>(2)插入法</h3><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.51.26.png" alt="截屏2022-10-21 上午8.51.26"></p><p>点击此处后输入行数即可</p><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.51.45.png" alt="截屏2022-10-21 上午8.51.45"></p><h2 id="2-如何拖动表格"><a href="#2-如何拖动表格" class="headerlink" title="2.如何拖动表格"></a>2.如何拖动表格</h2><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.52.50.png" alt="截屏2022-10-21 上午8.52.50"></p><p>点击左上角可拖动表格位置 右下角可缩放表格</p><h2 id="3-合并单元格"><a href="#3-合并单元格" class="headerlink" title="3.合并单元格"></a>3.合并单元格</h2><p>拖动选中要合并的单元格后点击合并单元格即可<img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%888.55.58.png" alt="截屏2022-10-21 上午8.55.58"></p><h2 id="4-将单元格拉宽"><a href="#4-将单元格拉宽" class="headerlink" title="4.将单元格拉宽"></a>4.将单元格拉宽</h2><h2 id="5-自动调整-平均分布各列"><a href="#5-自动调整-平均分布各列" class="headerlink" title="5.自动调整-平均分布各列"></a>5.自动调整-平均分布各列</h2><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%889.01.59.png" alt="截屏2022-10-21 上午9.01.59"></p><h2 id="6-表格的居中"><a href="#6-表格的居中" class="headerlink" title="6.表格的居中"></a>6.表格的居中</h2><p>选中所有表格后点击对齐方式即可开始选择</p><p>但是因为我们要做的是课程表 所以选择水平居中</p><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%889.10.14.png" alt="截屏2022-10-21 上午9.10.14"></p><h2 id="7-斜线表头"><a href="#7-斜线表头" class="headerlink" title="7.斜线表头"></a>7.斜线表头</h2><p>表格样式-绘制斜线表头</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="test4-2"><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%889.11.14.png" alt="截屏2022-10-21 上午9.11.14"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><details class="folding-tag" cyan><summary> 点我查看知识点总结 </summary>              <div class='content'>              <p>课程表案例的知识点</p><p>1.插入表格</p><p>（1）选择法：单击“插入”菜单的“表格”按钮右下角的黑色小箭头，在选择区域中挪动鼠标，选择合适的行列数，单击鼠标。</p><p>（2）命令：单击“插入”菜单的“表格”按钮右下角的黑色小箭头，单击“插入表格”命令，在对话框中输入行列数。</p><p>2.合并单元格：</p><p>3.在单元格输入内容：</p><p>技巧1：选择单元格可以用鼠标单击，也可也通过键盘的上下左右光标键。</p><p>4.调整单元格大小：拖动单元格边框线</p><p>5.调整文字显示效果：</p><p>（1）文字大小：</p><p>（2）文字颜色：</p><p>（3）文字加粗效果：</p><p>6.设置多列单元格宽度相同：</p><p>“表格工具”-“自动调整”-“平均分布各列”</p><p>7.插入斜线表头</p><p>（1）先把光标定位在要插入斜线表头的单元格当中。</p><p>（2）“表格样式”-“绘制斜线表头”。</p>              </div>            </details><h1 id="二-个人简历的制作"><a href="#二-个人简历的制作" class="headerlink" title="二.个人简历的制作"></a>二.个人简历的制作</h1><div class="note info modern"><p>难点:错开的表格该怎么做</p></div><div class="tip bolt faa-horizontal animated"><p>目标效果</p></div><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%889.24.58.png" alt="截屏2022-10-21 上午9.24.58"></p><h2 id="1-数最多的行和列并且插入表格"><a href="#1-数最多的行和列并且插入表格" class="headerlink" title="1.数最多的行和列并且插入表格"></a>1.数最多的行和列并且插入表格</h2><p>17行 5列</p><p>插入即可</p><h2 id="2-单独调整一部分单元格边框线"><a href="#2-单独调整一部分单元格边框线" class="headerlink" title="2.单独调整一部分单元格边框线"></a>2.单独调整一部分单元格边框线</h2><p>选中后调节即可</p><h2 id="3-边框和底纹"><a href="#3-边框和底纹" class="headerlink" title="3.边框和底纹"></a>3.边框和底纹</h2><p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%889.44.57.png" alt="截屏2022-10-21 上午9.44.57"></p><details class="folding-tag" cyan><summary> 点我查看效果 </summary>              <div class='content'>              <p><img src="/../imgs/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF-%E8%A1%A8%E6%A0%BC/%E6%88%AA%E5%B1%8F2022-10-21%20%E4%B8%8A%E5%8D%889.50.10.png" alt="截屏2022-10-21 上午9.50.10"></p>              </div>            </details>]]></content>
+      
+      
+      <categories>
+          
+          <category> 信息技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 信息技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>黑马h5-初识css</title>
       <link href="/2022/10/19/%E9%BB%91%E9%A9%ACh5-%E5%88%9D%E8%AF%86css/"/>
       <url>/2022/10/19/%E9%BB%91%E9%A9%ACh5-%E5%88%9D%E8%AF%86css/</url>
