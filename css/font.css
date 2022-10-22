@@ -22,6 +22,16 @@
     src: url('../font/qiuhong.ttf') format("truetype");
 }
 
+@font-face{
+    font-family: 'SentyGoldenBell';
+    font-display: swap;
+    src: url('../font/SentyGoldenBell.ttf') format("truetype");
+}
+
+
 body {
-    font-family: 'riluoxingchen';
+    font-family: 'SentyGoldenBell';
+}
+title {
+    font-family: 'SentyGoldenBell';
 }
