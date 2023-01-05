@@ -4,23 +4,223 @@
   
     
     <entry>
-      <title>黑马CSS-浮动</title>
-      <link href="/2022/12/03/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/"/>
-      <url>/2022/12/03/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/</url>
+      <title>黑马CSS-三角做法</title>
+      <link href="/2023/01/05/%E9%BB%91%E9%A9%ACCSS-%E4%B8%89%E8%A7%92%E5%81%9A%E6%B3%95/"/>
+      <url>/2023/01/05/%E9%BB%91%E9%A9%ACCSS-%E4%B8%89%E8%A7%92%E5%81%9A%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-为什么需要浮动"><a href="#一-为什么需要浮动" class="headerlink" title="一.为什么需要浮动"></a>一.为什么需要浮动</h1><h3 id="1-如何让多个块级盒子-div-水平排列为一行"><a href="#1-如何让多个块级盒子-div-水平排列为一行" class="headerlink" title="1.如何让多个块级盒子(div)水平排列为一行"></a>1.如何让多个块级盒子(div)水平排列为一行</h3><h3 id="2-如何实现两个盒子的左右对齐"><a href="#2-如何实现两个盒子的左右对齐" class="headerlink" title="2.如何实现两个盒子的左右对齐"></a>2.如何实现两个盒子的左右对齐</h3><div class="tip warning faa-horizontal animated"><p>准则: 多个块级元素纵向排列找标准流 多个块级元素横向排列找浮动</p></div><h1 id="二-什么是浮动"><a href="#二-什么是浮动" class="headerlink" title="二.什么是浮动"></a>二.什么是浮动</h1><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;float:属性值;&#125;</span><br></pre></td></tr></table></figure><div class="table-container"><table><thead><tr><th>属性值</th><th>描述</th></tr></thead><tbody><tr><td>none</td><td>元素不浮动(默认值)</td></tr><tr><td>left</td><td>元素向左浮动</td></tr><tr><td>right</td><td>元素向右浮动</td></tr></tbody></table></div><h1 id="三-浮动特性"><a href="#三-浮动特性" class="headerlink" title="三.浮动特性"></a>三.浮动特性</h1><div class="note info modern"><p>加了浮动后的元素 会具有很多特性</p></div><ul><li>浮动元素会脱离标准流(脱标)</li><li>浮动元素会一行内显示并且元素顶部对齐</li><li>浮动的元素会具有行内块元素的特性</li></ul><div class="note info modern"><p>1.脱离标准普通流控制(浮)移动到指定位置(动),俗称脱标</p><p>2.浮动的盒子不再保留原先的位置</p></div><div class="tip warning faa-horizontal animated"><p>任何元素都可以浮动 不管原先是什么元素 添加浮动后具有行内块元素相似的特性 如果行内元素有了浮动 则不需要转换块级/行内块元素就可以直接给高度和宽度</p></div><ul><li>如果块级盒子没有设置宽度 默认宽度和父级一样宽 但是添加浮动后 它的大小根据内容来决定</li><li>浮动的盒子中间没有缝隙 是紧挨着一起的</li><li>行内元素同理</li></ul><h1 id="四-浮动元素经常和标准流父级搭配使用"><a href="#四-浮动元素经常和标准流父级搭配使用" class="headerlink" title="四.浮动元素经常和标准流父级搭配使用"></a>四.浮动元素经常和标准流父级搭配使用</h1><p>为了约束元素位置 我们网页布局一般采用的策略是:</p><div class="note info modern"><p>先用标准流动父元素排列上下位置 之后内部子元素采取浮动排列左右位置 符合网页布局第一准则</p></div>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info modern"><p>网页中一些常见三角形,使用CSS直接画出来就可以,不必做成图片或者字体图标</p></div><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;CSS三角图标&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box1 &#123;</span><br><span class="line">width: 0;</span><br><span class="line">height: 0;</span><br><span class="line">border: 100px solid transparent;</span><br><span class="line">border-top-color: pink;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;box1&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-%E4%B8%89%E8%A7%92%E5%81%9A%E6%B3%95/%E6%88%AA%E5%B1%8F2023-01-05%20%E4%B8%8B%E5%8D%884.16.05.png" alt="截屏2023-01-05 下午4.16.05"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
       
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-字体图标</title>
+      <link href="/2023/01/05/%E9%BB%91%E9%A9%ACCSS-%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/"/>
+      <url>/2023/01/05/%E9%BB%91%E9%A9%ACCSS-%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info modern"><div class="tip warning"><p>字体图标是一些网页常见的小图标,我们可以直接网上下载。因此使用可以分为:</p></div><ol><li>字体图标的下载</li><li>字体图标的引入(引入到我们html页面中)</li><li>字体图标的追加(以后添加新的小图标)</li></ol></div><h1 id="一-字体图标的下载"><a href="#一-字体图标的下载" class="headerlink" title="一.字体图标的下载"></a>一.字体图标的下载</h1><p>推荐下载网站:</p><div class="tag link"><a class="link-card" title="icomoon字体库" href="http://icomoon.io"><div class="left"><img src="https://q1.qlogo.cn/g?b=qq&nk=2145738&s=100"/></div><div class="right"><p class="text">icomoon字体库</p><p class="url">http://icomoon.io</p></div></a></div><div class="tag link"><a class="link-card" title="阿里字体库" href="http://www.iconfont.cn"><div class="left"><img src="https://q1.qlogo.cn/g?b=qq&nk=2145738&s=100"/></div><div class="right"><p class="text">阿里字体库</p><p class="url">http://www.iconfont.cn</p></div></a></div><h1 id="二-字体图标的引入"><a href="#二-字体图标的引入" class="headerlink" title="二.字体图标的引入"></a>二.字体图标的引入</h1><p>1.把下载包里面的fonts文件夹放入页面根目录下</p><p>2.在CSS样式中全局声明字体:简单理解把这些字体文件通过CSS引入到我们的页面中。一定注意字体文件路径的问题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">  font-family: &#39;icomoon&#39;;</span><br><span class="line">  src:  url(&#39;fonts&#x2F;icomoon.eot?709eta&#39;);</span><br><span class="line">  src:  url(&#39;fonts&#x2F;icomoon.eot?709eta#iefix&#39;) format(&#39;embedded-opentype&#39;),</span><br><span class="line">    url(&#39;fonts&#x2F;icomoon.ttf?709eta&#39;) format(&#39;truetype&#39;),</span><br><span class="line">    url(&#39;fonts&#x2F;icomoon.woff?709eta&#39;) format(&#39;woff&#39;),</span><br><span class="line">    url(&#39;fonts&#x2F;icomoon.svg?709eta#icomoon&#39;) format(&#39;svg&#39;);</span><br><span class="line">  font-weight: normal;</span><br><span class="line">  font-style: normal;</span><br><span class="line">  font-display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3.复制方块后直接引用即可</p><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">@font-face &#123;</span><br><span class="line">  font-family: &#39;icomoon&#39;;</span><br><span class="line">  src:  url(&#39;fonts&#x2F;icomoon.eot?709eta&#39;);</span><br><span class="line">  src:  url(&#39;fonts&#x2F;icomoon.eot?709eta#iefix&#39;) format(&#39;embedded-opentype&#39;),</span><br><span class="line">    url(&#39;fonts&#x2F;icomoon.ttf?709eta&#39;) format(&#39;truetype&#39;),</span><br><span class="line">    url(&#39;fonts&#x2F;icomoon.woff?709eta&#39;) format(&#39;woff&#39;),</span><br><span class="line">    url(&#39;fonts&#x2F;icomoon.svg?709eta#icomoon&#39;) format(&#39;svg&#39;);</span><br><span class="line">  font-weight: normal;</span><br><span class="line">  font-style: normal;</span><br><span class="line">  font-display: block;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">font-size: 100px;</span><br><span class="line">font-family: &#39;icomoon&#39;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;span&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;span&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/%E6%88%AA%E5%B1%8F2023-01-05%20%E4%B8%8B%E5%8D%882.54.53.png" alt="截屏2023-01-05 下午2.54.53"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h1 id="三-字体图标的追加"><a href="#三-字体图标的追加" class="headerlink" title="三.字体图标的追加"></a>三.字体图标的追加</h1><div class="tip warning"><p>如果工作中,原来的字体图标不够用了,我们需要添加新的字体图标到原来的字体文件中。</p><p>把压缩包里的selection.json文件重新上传,然后选中自己想要的新图标,重新下载压缩包,并替换原来的文件即可</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-精灵图</title>
+      <link href="/2022/12/29/%E9%BB%91%E9%A9%ACCSS-%E7%B2%BE%E7%81%B5%E5%9B%BE/"/>
+      <url>/2022/12/29/%E9%BB%91%E9%A9%ACCSS-%E7%B2%BE%E7%81%B5%E5%9B%BE/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info modern"><p>使用精灵图核心:</p><p>1.精灵技术主要针对背景图片使用。就是把多个小背景图片整合到一张大图片中。</p><p>2.这个大图片也称为sprites 精灵图或者雪碧图</p><p>3.移动背景图片位置,此时可以使用background-position</p><p>4.移动的距离就是这个目标图片的x和y坐标。注意网页中的坐标有所不同</p><p>5.因为一般情况下都是往上往左移动,所以数值是负值</p><p>6.使用精灵图的时候需要精确测量,每个小背景图片的大小和位置。</p></div><div class="note info modern"><p>使用精灵图核心总结:</p><p>1.精灵图主要针对于小的背景图片使用。</p><p>2.主要借助于背景位置来实现—background-position</p><p>3.一般情况下精灵图都是负值(网页中的坐标:x轴右边走是正值,左边走是负值,y轴同理)</p></div><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box1 &#123;</span><br><span class="line">width: 60px;</span><br><span class="line">height: 60px;</span><br><span class="line">margin: 0 auto;</span><br><span class="line">background: url(https:&#x2F;&#x2F;game.gtimg.cn&#x2F;images&#x2F;yxzj&#x2F;web201706&#x2F;images&#x2F;comm&#x2F;index.png) -182px 0;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;box1&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-%E7%B2%BE%E7%81%B5%E5%9B%BE/%E6%88%AA%E5%B1%8F2023-01-05%20%E4%B8%8B%E5%8D%881.00.28.png" alt="截屏2023-01-05 下午1.00.28"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-元素的显示与隐藏</title>
+      <link href="/2022/12/19/%E9%BB%91%E9%A9%ACCSS-%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/"/>
+      <url>/2022/12/19/%E9%BB%91%E9%A9%ACCSS-%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-display显示隐藏"><a href="#1-display显示隐藏" class="headerlink" title="1.display显示隐藏"></a>1.display显示隐藏</h3><div class="tip warning faa-horizontal animated"><p>display属性用于设置一个元素应如何显示</p></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: none;隐藏对象</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display: block;除了转换为块级元素,同时还有显示元素的意思</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素被隐藏后不占用位置</span><br></pre></td></tr></table></figure><h3 id="2-visibitily可见性"><a href="#2-visibitily可见性" class="headerlink" title="2.visibitily可见性"></a>2.visibitily可见性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visibitily: visible; 元素可视</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visibility: hidden; 元素隐藏</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素被隐藏后继续占有原来的位置</span><br></pre></td></tr></table></figure><h3 id="3-overflow溢出显示隐藏"><a href="#3-overflow溢出显示隐藏" class="headerlink" title="3.overflow溢出显示隐藏"></a>3.overflow溢出显示隐藏</h3><p>只对溢出部分进行处理</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-网页布局总结</title>
+      <link href="/2022/12/19/%E9%BB%91%E9%A9%ACCSS-%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E6%80%BB%E7%BB%93/"/>
+      <url>/2022/12/19/%E9%BB%91%E9%A9%ACCSS-%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="一-标准流"><a href="#一-标准流" class="headerlink" title="一.标准流"></a>一.标准流</h3><p>可以让盒子上下排列或者左右排列,垂直的块级盒子显示就用标准流布局</p><h3 id="二-浮动"><a href="#二-浮动" class="headerlink" title="二.浮动"></a>二.浮动</h3><p>可以让多个块级元素一行显示或者左右对齐盒子,多个块级盒子水平显示就用浮动布局</p><h3 id="三-定位"><a href="#三-定位" class="headerlink" title="三.定位"></a>三.定位</h3><p>定位的最大特点三有层叠的概念,就是可以让多个盒子前后叠压来显示。如果元素自由在某个盒子内移动就用定位布局</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-CSS定位叠放次序z-index</title>
+      <link href="/2022/12/16/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D%E5%8F%A0%E6%94%BE%E6%AC%A1%E5%BA%8Fz-index/"/>
+      <url>/2022/12/16/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D%E5%8F%A0%E6%94%BE%E6%AC%A1%E5%BA%8Fz-index/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="tip warning faa-horizontal animated"><p>在我们定位布局的时候 可能会出现盒子重叠的情况 此时 可以使用z-index来控制盒子的前后次序(z轴)</p></div><div class="note info modern"><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; z-index: 1;&#125;</span><br></pre></td></tr></table></figure><ul><li>数值可以是正整数、负整数或0、默认是auto,数值越大,盒子越靠上</li><li>如果属性值相同,则按照书写顺序,后来居上</li><li>数字后面不能加单位</li><li>只有定位的盒子才有z-index属性</li></ul></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-CSS定位</title>
+      <link href="/2022/12/12/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D/"/>
+      <url>/2022/12/12/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-为什么需要定位"><a href="#一-为什么需要定位" class="headerlink" title="一.为什么需要定位"></a>一.为什么需要定位</h1><div class="note info modern"><p>提问:以下情况使用标准流或者浮动能实现吗?</p></div><p>某个元素可以自由的在一个盒子内移动位置 并且压住其他盒子</p><div class="tip warning faa-horizontal animated"><p>1.浮动可以让多个块级盒子一行没有缝隙显示 经常用于横向排列盒子</p><p>2.定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置 并且可以压住其他盒子</p></div><h1 id="二-定位的组成"><a href="#二-定位的组成" class="headerlink" title="二.定位的组成"></a>二.定位的组成</h1><div class="note info modern"><p>定位:将盒子定在某一个位置 所以定位也是在摆放盒子 按照定位的方式移动盒子</p><p>定位=定位模式+边偏移</p><p>定位模式用于指定一个元素在文档中的定位方式 边偏移则决定了该元素的最终位置</p></div><h3 id="1-定位模式"><a href="#1-定位模式" class="headerlink" title="1.定位模式"></a>1.定位模式</h3><p>定位模式决定元素的最终位置 它通过CSS的position属性来设置 其值可以分为四个:</p><div class="table-container"><table><thead><tr><th>值</th><th>语义</th></tr></thead><tbody><tr><td>static</td><td>静态定位</td></tr><tr><td>relative</td><td>相对定位</td></tr><tr><td>absolute</td><td>绝对定位</td></tr><tr><td>fixed</td><td>固定定位</td></tr></tbody></table></div><h3 id="2-边偏移"><a href="#2-边偏移" class="headerlink" title="2.边偏移"></a>2.边偏移</h3><p>边偏移就是定位的盒子移动到最终位置 有top,bottom,left和right四个属性</p><div class="table-container"><table><thead><tr><th>边偏移属性</th><th>示例</th><th>描述</th></tr></thead><tbody><tr><td>top</td><td>top: 80px</td><td>顶端偏移量,定义元素相对于其父元素上边线的距离</td></tr><tr><td>bottom</td><td>bottom: 80px</td><td>底部偏移量,定义元素相对于其父元素上边线的距离</td></tr><tr><td>left</td><td>left: 80px</td><td>左侧偏移量,定义元素相对于其父元素上边线的距离</td></tr><tr><td>right</td><td>right: 80px</td><td>右侧偏移量,定义元素相对于其父元素上边线的距离</td></tr></tbody></table></div><h3 id="3-静态定位static-了解"><a href="#3-静态定位static-了解" class="headerlink" title="3.静态定位static(了解)"></a>3.静态定位static(了解)</h3><p>静态定位是元素的默认定位方式 无定位的意思</p><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: static;&#125;</span><br></pre></td></tr></table></figure><div class="tip warning faa-horizontal animated"><ul><li>静态定位按照标准流特性摆放位置 它没有边偏移</li><li>静态定位在布局中很少用到</li></ul></div><h3 id="4-相对定位relative-重要"><a href="#4-相对定位relative-重要" class="headerlink" title="4.相对定位relative(重要)"></a>4.相对定位relative(重要)</h3><p>相对定位是元素在移动位置的时候 是相对于它原来的位置来说的(自恋型)</p><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;psition: relitive; &#125;</span><br></pre></td></tr></table></figure><div class="tip warning faa-horizontal animated"><p>相对定位的特点:</p><ol><li>它是相对于自己原来的位置来移动的(移动位置的时候参照点是自己原来的位置)</li><li>原来在标准流的位置继续占有 后面的盒子仍然以标准流的方式对待它(不脱标 继续保留原来位置)</li><li>因此相对定位并没有脱标 他最典型的应用是给绝对定位当爹的</li></ol></div><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs test4,-1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 点我查看源代码 --&gt;</span><br><span class="line"></span><br><span class="line">**里面的内容**</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 点我查看使用效果 --&gt;</span><br><span class="line"></span><br><span class="line">**里面的内容**</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D/%E6%88%AA%E5%B1%8F2022-12-13%20%E4%B8%8B%E5%8D%889.26.19.png" alt="截屏2022-12-13 下午9.26.19"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h3 id="5-绝对定位absolute-重要"><a href="#5-绝对定位absolute-重要" class="headerlink" title="5.绝对定位absolute(重要)"></a>5.绝对定位absolute(重要)</h3><div class="note info modern"><p>绝对定位是元素在移动位置的时候 是相对于它祖先元素来说的(拼爹型)</p><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;position:absolute; &#125;</span><br></pre></td></tr></table></figure></div><div class="note info modern"><p>绝对定位特点:(务必记住)</p><ol><li>如果没有祖先元素或者祖先元素没有定位 则以浏览器为准定位(Document文档)</li><li>如果祖先元素有定位(相对,绝对,固定定位),则以最近一级的有定位的祖先元素为参考点移动位置</li><li>绝对定位不再占有原先的位置(脱标)</li></ol></div><h4 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h4><p>1.绝对定位和相对定位到底有什么使用场景呢?</p><p>2.为什么说相对定位给绝对定位当爹呢?</p><h4 id="2-子绝父相的由来"><a href="#2-子绝父相的由来" class="headerlink" title="2.子绝父相的由来"></a>2.子绝父相的由来</h4><div class="tip warning faa-horizontal animated"><p>子级是绝对定位的话 父级要用相对定位</p><p>1.子级绝对定位 不会占有位置 可以放到父盒子里面的任何一个地方 不会影响其他的兄弟盒子</p><p>2.父盒子需要加定位限制子盒子在父盒子内显示</p><p>3.父盒子布局时 需要占有位置 因此父亲只能是相对定位</p></div><h3 id="6-固定定位fixed-重要"><a href="#6-固定定位fixed-重要" class="headerlink" title="6.固定定位fixed(重要)"></a>6.固定定位fixed(重要)</h3><div class="note info modern"><p>固定定位是元素固定于浏览器可视区的位置 主要使用场景:可以在浏览器页面滚动时元素的位置不会改变</p><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;position:fixed; &#125;</span><br></pre></td></tr></table></figure></div><div class="note info modern"><p>特点:(务必记住)</p><p>1.以浏览器的可视窗口为参照点移动元素</p><p>2.跟父元素没有任何关系</p><p>3.不随滚动条滚动</p><p>4.固定定位不再占有原先的位置</p><div class="tip warning faa-horizontal animated"><p>固定定位也是脱标的 其实固定定位也可以看做是一种特殊的绝对定位34为31</p></div><p>固定定位小技巧:  固定在版心右侧位置</p><p>小算法: </p><ol><li>让固定定位度盒子left:50% 走到浏览器可视区(也可以看作版心)的一半位置</li><li>让固定定位的盒子margin-left:版心宽度的一半距离 多走版心宽度的一半位置</li></ol></div><h3 id="7-粘性定位sticky-了解"><a href="#7-粘性定位sticky-了解" class="headerlink" title="7.粘性定位sticky(了解)"></a>7.粘性定位sticky(了解)</h3><div class="tip warning faa-horizontal animated"><p>粘性定位可以被认为是相对定位和固定定位的混合 Sticky粘性的</p></div><div class="note info modern"><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: sticky; top: 10px; &#125;</span><br></pre></td></tr></table></figure><p>特点:</p><ol><li>以浏览器的可视窗口为参照点移动元素(固定定位特点)</li><li>粘性定位占有原先的位置(相对定位特点)</li><li>必须添加top、left、bottom其中一个才有效</li></ol></div><h3 id="8-总结"><a href="#8-总结" class="headerlink" title="8.总结"></a>8.总结</h3><div class="table-container"><table><thead><tr><th>定位模式</th><th>是否脱标</th><th>移动位置</th><th>是否常用</th></tr></thead><tbody><tr><td>static静态定位</td><td>否</td><td>不能使用边偏移</td><td>很少</td></tr><tr><td>relative相对定位</td><td>否(占用位置)</td><td>相对于自身位置移动</td><td>常用</td></tr><tr><td>absolute绝对定位</td><td>是(不占用位置)</td><td>带有定位的父级</td><td>常用</td></tr><tr><td>fixed固定定位</td><td>是(不占有位置)</td><td>浏览器可视区</td><td>常用</td></tr><tr><td>sticky粘性定位</td><td>否(占用位置)</td><td>浏览器可视区</td><td>当前阶段很少</td></tr></tbody></table></div><h3 id="9-定位的拓展"><a href="#9-定位的拓展" class="headerlink" title="9.定位的拓展"></a>9.定位的拓展</h3><h4 id="1-绝对定位的盒子居中"><a href="#1-绝对定位的盒子居中" class="headerlink" title="1.绝对定位的盒子居中"></a>1.绝对定位的盒子居中</h4><div class="note info modern"><p>1.先用left:50%;将盒子向右移动屏幕的一半</p><p>2.用margin-left:-盒子一半大小;使盒子居中显示</p><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line"> .box &#123;</span><br><span class="line"> height: 100px;</span><br><span class="line"> width: 100px;</span><br><span class="line"> background-color: black;</span><br><span class="line"> margin: auto;</span><br><span class="line"> position: absolute;</span><br><span class="line"> left: 50%;</span><br><span class="line"> margin-left: -50px;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;测试&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D/%E6%88%AA%E5%B1%8F2022-12-16%20%E4%B8%8B%E5%8D%883.39.33.png" alt="截屏2022-12-16 下午3.39.33"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div></div><h4 id="2-定位特殊特性"><a href="#2-定位特殊特性" class="headerlink" title="2.定位特殊特性"></a>2.定位特殊特性</h4><div class="note info modern"><p>1.行内元素添加绝对或者固定定位,可以直接设置高度和宽度</p><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">span &#123;</span><br><span class="line">background-color: red;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">position: absolute;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;span&gt;我是一个span(行内元素)&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D/%E6%88%AA%E5%B1%8F2022-12-16%20%E4%B8%8B%E5%8D%889.35.21.png" alt="截屏2022-12-16 下午9.35.21"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><p>2.块级元素添加绝对或者固定定位,如果不给宽度或者高度,默认大小是内容的大小</p><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div &#123;</span><br><span class="line">position: absolute;</span><br><span class="line">background-color: black;</span><br><span class="line">color: aliceblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;123456&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-CSS%E5%AE%9A%E4%BD%8D/%E6%88%AA%E5%B1%8F2022-12-16%20%E4%B8%8B%E5%8D%889.40.39.png" alt="截屏2022-12-16 下午9.40.39"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><p>3.绝对定位(固定定位)会完全压住盒子</p><p>浮动元素不同,只会压住它下面标准流的盒子,但是不会压住下面标准流盒子里面的文字(图片)</p><p>但是绝对定位(固定定位)会压住标准流所有的内容</p><p>浮动之所以不会压住文字,因为浮动产生的目的最初是为了做文字环绕效果的 文字会围绕浮动元素</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-学成在线案例</title>
+      <link href="/2022/12/07/%E9%BB%91%E9%A9%ACCSS-%E5%AD%A6%E6%88%90%E5%9C%A8%E7%BA%BF%E6%A1%88%E4%BE%8B/"/>
+      <url>/2022/12/07/%E9%BB%91%E9%A9%ACCSS-%E5%AD%A6%E6%88%90%E5%9C%A8%E7%BA%BF%E6%A1%88%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-CSS属性书写顺序-重点"><a href="#一-CSS属性书写顺序-重点" class="headerlink" title="一.CSS属性书写顺序(重点)"></a>一.CSS属性书写顺序(重点)</h1><div class="tip warning faa-horizontal animated"><p>遵循以下顺序</p></div><div class="note info modern"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.布局自定义属性: display&#x2F;position&#x2F;float&#x2F;clear&#x2F;visibility&#x2F;overflow(建议display第一个写 因为关系到模式)</span><br><span class="line"></span><br><span class="line">2.自身属性: width&#x2F;height&#x2F;margin&#x2F;padding&#x2F;border&#x2F;background</span><br><span class="line"></span><br><span class="line">3.文本属性: color&#x2F;font&#x2F;text-decoration&#x2F;text-align&#x2F;vertical-align&#x2F;white-space&#x2F;break-word</span><br><span class="line"></span><br><span class="line">4.其他属性(CSS3): content&#x2F;cursor&#x2F;border-radius&#x2F;box-shadow&#x2F;background:linear-gradient...</span><br></pre></td></tr></table></figure></div><h1 id="二-页面布局整体思路"><a href="#二-页面布局整体思路" class="headerlink" title="二.页面布局整体思路"></a>二.页面布局整体思路</h1><div class="tip warning faa-horizontal animated"><p>为了提高网页制作的效率 布局通常有以下的整体思路</p></div><div class="note info modern"><p>1.必须确定页面的版心(可视区) 我们测量可得知</p><p>2.分析页面中的行模块 以及每个页面中的页模块 其实页面布局第一准则</p><p>3,一行中的列模块经常浮动布局 先确定每个列 的大小 之后确定列的位置 页面布局第二准则</p><p>4.制作HTML结构 我们还是遵循 先有结构 后有样式的原则 结构永远最重要</p><p>5.所以 先理清楚布局结构 再写代码尤为重要 这需要我们多写多积累</p></div><h1 id="三-头部制作"><a href="#三-头部制作" class="headerlink" title="三.头部制作"></a>三.头部制作</h1><h3 id="1-导航栏"><a href="#1-导航栏" class="headerlink" title="1.导航栏"></a>1.导航栏</h3><div class="tip warning faa-horizontal animated"><p>实际开发中 我们不会直接用链接a 而是用li包含链接(li+a)的做法</p><p>1.li+a语义更清晰 一看就是有条理的列表型内容</p><p>2.如果直接使用a 搜索引擎容易辨别伪有堆砌关键字嫌疑(故意堆砌关键字容易被搜索引擎有降权的风险) 从而影响网站排名</p></div><div class="tip warning faa-horizontal animated"><p>注意:</p><p>1.让导航栏一行显示 给li加浮动 因为li是块级元素 需要一行显示</p><p>2.这个nav导航栏可以不给宽度 将来可以继续添加其余文字</p><p>3.因为导航栏里面文字不一样多 所以最好给链接a左右padding撑开盒子 而不是指定宽度</p></div><h3 id="2-搜索search模块input制作"><a href="#2-搜索search模块input制作" class="headerlink" title="2.搜索search模块input制作"></a>2.搜索search模块input制作</h3><div class="tip warning faa-horizontal animated"><p>一个search大盒子里包含2个表单</p><p>input文本框</p><p>button按钮</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>黑马CSS-浮动</title>
+      <link href="/2022/12/03/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/"/>
+      <url>/2022/12/03/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-为什么需要浮动"><a href="#一-为什么需要浮动" class="headerlink" title="一.为什么需要浮动"></a>一.为什么需要浮动</h1><h3 id="1-如何让多个块级盒子-div-水平排列为一行"><a href="#1-如何让多个块级盒子-div-水平排列为一行" class="headerlink" title="1.如何让多个块级盒子(div)水平排列为一行"></a>1.如何让多个块级盒子(div)水平排列为一行</h3><h3 id="2-如何实现两个盒子的左右对齐"><a href="#2-如何实现两个盒子的左右对齐" class="headerlink" title="2.如何实现两个盒子的左右对齐"></a>2.如何实现两个盒子的左右对齐</h3><div class="tip warning faa-horizontal animated"><p>准则: 多个块级元素纵向排列找标准流 多个块级元素横向排列找浮动</p></div><h1 id="二-什么是浮动"><a href="#二-什么是浮动" class="headerlink" title="二.什么是浮动"></a>二.什么是浮动</h1><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;float:属性值;&#125;</span><br></pre></td></tr></table></figure><div class="table-container"><table><thead><tr><th>属性值</th><th>描述</th></tr></thead><tbody><tr><td>none</td><td>元素不浮动(默认值)</td></tr><tr><td>left</td><td>元素向左浮动</td></tr><tr><td>right</td><td>元素向右浮动</td></tr></tbody></table></div><h1 id="三-浮动特性"><a href="#三-浮动特性" class="headerlink" title="三.浮动特性"></a>三.浮动特性</h1><div class="note info modern"><p>加了浮动后的元素 会具有很多特性</p></div><ul><li>浮动元素会脱离标准流(脱标)</li><li>浮动元素会一行内显示并且元素顶部对齐</li><li>浮动的元素会具有行内块元素的特性</li></ul><div class="note info modern"><p>1.脱离标准普通流控制(浮)移动到指定位置(动),俗称脱标</p><p>2.浮动的盒子不再保留原先的位置</p></div><div class="tip warning faa-horizontal animated"><p>任何元素都可以浮动 不管原先是什么元素 添加浮动后具有行内块元素相似的特性 如果行内元素有了浮动 则不需要转换块级/行内块元素就可以直接给高度和宽度</p></div><ul><li>如果块级盒子没有设置宽度 默认宽度和父级一样宽 但是添加浮动后 它的大小根据内容来决定</li><li>浮动的盒子中间没有缝隙 是紧挨着一起的</li><li>行内元素同理</li></ul><h1 id="四-浮动元素经常和标准流父级搭配使用"><a href="#四-浮动元素经常和标准流父级搭配使用" class="headerlink" title="四.浮动元素经常和标准流父级搭配使用"></a>四.浮动元素经常和标准流父级搭配使用</h1><p>为了约束元素位置 我们网页布局一般采用的策略是:</p><div class="note info modern"><p>先用标准流动父元素排列上下位置 之后内部子元素采取浮动排列左右位置 符合网页布局第一准则</p></div><h1 id="五-为什么要清除浮动"><a href="#五-为什么要清除浮动" class="headerlink" title="五.为什么要清除浮动"></a>五.为什么要清除浮动</h1><p>我们前面浮动元素有一个标准流的父元素 他们有一个共同点 都是有高度的 </p><p>但是 所有的父盒子都必须要有高度吗</p><div class="tip warning faa-horizontal animated"><p>给了浮动后父盒子的高度就变成0了</p></div><div class="note info modern"><p>清除浮动办法</p></div><div class="tip warning faa-horizontal animated"><p>由于父级盒子很多情况下 不方便给高度 但是子盒子又不占有位置 最后父级盒子高度为0时 就会影响下面的标准流盒子</p></div><p>语法:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;clear:属性值;&#125;</span><br></pre></td></tr></table></figure><div class="table-container"><table><thead><tr><th>属性值</th><th>描述</th></tr></thead><tbody><tr><td>left</td><td>不允许左侧有浮动元素(清除左侧浮动的影响)</td></tr><tr><td>right</td><td>不允许右侧有浮动元素(清除右侧浮动的影响)</td></tr><tr><td>both</td><td>同时清除左右两侧浮动的影响</td></tr></tbody></table></div><p>我们实际工作中几乎只用both</p><p>清除浮动的策略是闭合浮动</p><h3 id="1-额外标签法也称为隔墙法-是W3C推荐的做法"><a href="#1-额外标签法也称为隔墙法-是W3C推荐的做法" class="headerlink" title="1.额外标签法也称为隔墙法 是W3C推荐的做法"></a>1.<strong>额外标签法</strong>也称为隔墙法 是W3C推荐的做法</h3><p>额外标签会在浮动元素的末尾添加一个空的标签 例如</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;clear:both&quot;&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure><p>或者其他标签 </p><div class="tip warning faa-horizontal animated"><p>必须块级元素</p></div><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">width: 800px;</span><br><span class="line">border: 2px solid black;</span><br><span class="line">&#125;</span><br><span class="line">.damao &#123;</span><br><span class="line">background-color: red;</span><br><span class="line">height: 200px;</span><br><span class="line">width: 200px;</span><br><span class="line">float: left;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.ermao &#123;</span><br><span class="line">background-color: blue;</span><br><span class="line">height: 200px;</span><br><span class="line">width: 300px;</span><br><span class="line">float: left;</span><br><span class="line">&#125;</span><br><span class="line">.clear &#123;</span><br><span class="line">clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.footer &#123;</span><br><span class="line">background-color: aqua;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;damao&quot;&gt;大毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;ermao&quot;&gt;二毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;damao&quot;&gt;大毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;ermao&quot;&gt;二毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;clear&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;footer&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/%E6%88%AA%E5%B1%8F2022-12-07%20%E4%B8%8B%E5%8D%882.45.35.png" alt="截屏2022-12-07 下午2.45.35"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h3 id="2-父级添加overflow属性"><a href="#2-父级添加overflow属性" class="headerlink" title="2.父级添加overflow属性"></a>2.父级添加overflow属性</h3><p>可以给父级添加overflow属性 将其属性值设置为hidden auto或scroll</p><ul><li>优点:代码简洁</li><li>缺点:无法显示溢出的部分</li></ul><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">width: 800px;</span><br><span class="line">border: 2px solid black;</span><br><span class="line">overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.damao &#123;</span><br><span class="line">background-color: red;</span><br><span class="line">height: 200px;</span><br><span class="line">width: 200px;</span><br><span class="line">float: left;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.ermao &#123;</span><br><span class="line">background-color: blue;</span><br><span class="line">height: 200px;</span><br><span class="line">width: 300px;</span><br><span class="line">float: left;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* .clear &#123;</span><br><span class="line">clear: both;</span><br><span class="line">&#125; *&#x2F;</span><br><span class="line">.footer &#123;</span><br><span class="line">background-color: aqua;</span><br><span class="line"></span><br><span class="line">height: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;damao&quot;&gt;大毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;ermao&quot;&gt;二毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;damao&quot;&gt;大毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;ermao&quot;&gt;二毛&lt;&#x2F;div&gt;</span><br><span class="line">&lt;!-- &lt;div class&#x3D;&quot;clear&quot;&gt;&lt;&#x2F;div&gt; --&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;footer&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/%E6%88%AA%E5%B1%8F2022-12-07%20%E4%B8%8B%E5%8D%883.31.26.png" alt="截屏2022-12-07 下午3.31.26"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h3 id="3-父级添加after伪元素"><a href="#3-父级添加after伪元素" class="headerlink" title="3.父级添加after伪元素"></a>3.父级添加after伪元素</h3><p>:after方式三额外标签法的升级版 也是给父元素添加</p><div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test4-1">点我查看源代码</button></li><li class="tab"><button type="button" data-href="#test4-2">点我查看使用效果</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test4-1"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">content: &quot;&quot;;</span><br><span class="line">display: block;</span><br><span class="line">height: 0;</span><br><span class="line">clear: both;</span><br><span class="line">visibility: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123; &#x2F;* IE6 7专用 *&#x2F;</span><br><span class="line">*zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><img src="/../imgs/%E9%BB%91%E9%A9%ACCSS-%E6%B5%AE%E5%8A%A8/%E6%88%AA%E5%B1%8F2022-12-07%20%E4%B8%8B%E5%8D%883.31.26.png" alt="截屏2022-12-07 下午3.31.26"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div><h3 id="4-父级添加双伪元素"><a href="#4-父级添加双伪元素" class="headerlink" title="4.父级添加双伪元素"></a>4.父级添加双伪元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">content: &quot;&quot;;</span><br><span class="line">display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123; &#x2F;* IE6 7专用 *&#x2F;</span><br><span class="line">*zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p>为什么要清除浮动?</p><ul><li>父级没高度</li><li>子盒子浮动了</li><li>影响下面布局了 我们i就应清除浮动</li></ul><div class="table-container"><table><thead><tr><th>清除浮动的方式</th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td>额外标签法(隔墙法)</td><td>通俗易懂</td><td>添加许多无意义的标签 结构化较差</td></tr><tr><td>父级overflow:hidden;</td><td>书写简单</td><td>溢出隐藏</td></tr><tr><td>父级after伪元素</td><td>结构语义化正确</td><td>由于IE6-7不支持:after 兼容性问题</td></tr><tr><td>父级双伪元素</td><td>结构语义化正确</td><td>由于IE6-7不支持:after 兼容性问题</td></tr></tbody></table></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端小灶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -38,14 +238,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -63,14 +263,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -88,14 +288,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -113,14 +313,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -138,14 +338,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -163,14 +363,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -233,7 +433,7 @@
       <link href="/2022/11/14/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/"/>
       <url>/2022/11/14/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-字体属性"><a href="#一-字体属性" class="headerlink" title="一.字体属性"></a>一.字体属性</h1><h3 id="1-color-字体颜色"><a href="#1-color-字体颜色" class="headerlink" title="1.color:;字体颜色"></a>1.color:;字体颜色</h3><p>颜色的取值:</p><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.07.58.png" alt="截屏2022-11-14 下午2.07.58"></p><h3 id="2-font-size-字体大小"><a href="#2-font-size-字体大小" class="headerlink" title="2.font-size:;字体大小"></a>2.font-size:;字体大小</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.48.17.png" alt="截屏2022-11-14 下午2.48.17"></p><h3 id="3-font-weight-字体粗细"><a href="#3-font-weight-字体粗细" class="headerlink" title="3.font-weight:;字体粗细"></a>3.font-weight:;字体粗细</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.52.02.png" alt="截屏2022-11-14 下午2.52.02"></p><h3 id="4-font-style-字体倾斜"><a href="#4-font-style-字体倾斜" class="headerlink" title="4.font-style:;字体倾斜"></a>4.font-style:;字体倾斜</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.53.56.png" alt="截屏2022-11-14 下午2.53.56"></p><h3 id="5-font-family-字体"><a href="#5-font-family-字体" class="headerlink" title="5.font-family: ,,, ;字体"></a>5.font-family: ,,, ;字体</h3><h1 id="二-文本属性"><a href="#二-文本属性" class="headerlink" title="二.文本属性"></a>二.文本属性</h1><h3 id="1-text-align-元素内容的水平对齐方式"><a href="#1-text-align-元素内容的水平对齐方式" class="headerlink" title="1.text-align:;元素内容的水平对齐方式"></a>1.text-align:;元素内容的水平对齐方式</h3><h3 id="2-line-height-行高"><a href="#2-line-height-行高" class="headerlink" title="2.line-height:;行高"></a>2.line-height:;行高</h3><p>行高设置和盒子高度一样时可以设置垂直居中</p><h3 id="3-text-decoration-取消下划线"><a href="#3-text-decoration-取消下划线" class="headerlink" title="3.text-decoration:;取消下划线"></a>3.text-decoration:;取消下划线</h3><p>可以去除a标签自带的下划线</p><h1 id="三-列表属性"><a href="#三-列表属性" class="headerlink" title="三.列表属性"></a>三.列表属性</h1><h3 id="1-list-style-type-none-去掉li标签默认的点"><a href="#1-list-style-type-none-去掉li标签默认的点" class="headerlink" title="1.list-style-type:none;去掉li标签默认的点"></a>1.list-style-type:none;去掉li标签默认的点</h3><h1 id="四-CSS选择器"><a href="#四-CSS选择器" class="headerlink" title="四.CSS选择器"></a>四.CSS选择器</h1><h3 id="1-后代选择器"><a href="#1-后代选择器" class="headerlink" title="1.后代选择器"></a>1.后代选择器</h3><p>父元素标签 后代元素选择器 {样式声明}</p><h3 id="2-子代选择器"><a href="#2-子代选择器" class="headerlink" title="2.子代选择器"></a>2.子代选择器</h3><p>父元素标签&gt;后代元素选择器 {样式声明}</p><h3 id="3-兄弟选择器"><a href="#3-兄弟选择器" class="headerlink" title="3.兄弟选择器"></a>3.兄弟选择器</h3><p>选择器 ~选择器 {样式声明}</p><h3 id="4-相邻兄弟选择器"><a href="#4-相邻兄弟选择器" class="headerlink" title="4.相邻兄弟选择器"></a>4.相邻兄弟选择器</h3><p>选择器+选择器 {样式声明}</p><h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-28%20%E4%B8%8B%E5%8D%881.22.26.png" alt="截屏2022-11-28 下午1.22.26"></p><h1 id="五-背景属性"><a href="#五-背景属性" class="headerlink" title="五.背景属性"></a>五.背景属性</h1><p>background-color:; 背景颜色</p><p>默认值:transparent 透明色</p><p>background-image: url(“路径”); 背景图片</p><p>backgronud-repeat: no-repeat;图片是否平铺</p><p>background-size:x y; 图片尺寸</p><p>background-position:x y;背景位置</p><p>background-attachment:fixed(不滚动)/scroll(滚动);背景是否跟随滚动</p><h1 id="六-伪类选择器"><a href="#六-伪类选择器" class="headerlink" title="六.伪类选择器"></a>六.伪类选择器</h1><p>hover伪类选择器</p><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-28%20%E4%B8%8B%E5%8D%882.53.25.png" alt="截屏2022-11-28 下午2.53.25"></p><p>first-child可以修改第一个元素</p><p>nth-child(序号)修改序号元素 even设置偶数 odd设置奇数3n可以设置倍数</p><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-28%20%E4%B8%8B%E5%8D%883.41.06.png" alt="截屏2022-11-28 下午3.41.06"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一-字体属性"><a href="#一-字体属性" class="headerlink" title="一.字体属性"></a>一.字体属性</h1><h3 id="1-color-字体颜色"><a href="#1-color-字体颜色" class="headerlink" title="1.color:;字体颜色"></a>1.color:;字体颜色</h3><p>颜色的取值:</p><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.07.58.png" alt="截屏2022-11-14 下午2.07.58"></p><h3 id="2-font-size-字体大小"><a href="#2-font-size-字体大小" class="headerlink" title="2.font-size:;字体大小"></a>2.font-size:;字体大小</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.48.17.png" alt="截屏2022-11-14 下午2.48.17"></p><h3 id="3-font-weight-字体粗细"><a href="#3-font-weight-字体粗细" class="headerlink" title="3.font-weight:;字体粗细"></a>3.font-weight:;字体粗细</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.52.02.png" alt="截屏2022-11-14 下午2.52.02"></p><h3 id="4-font-style-字体倾斜"><a href="#4-font-style-字体倾斜" class="headerlink" title="4.font-style:;字体倾斜"></a>4.font-style:;字体倾斜</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-14%20%E4%B8%8B%E5%8D%882.53.56.png" alt="截屏2022-11-14 下午2.53.56"></p><h3 id="5-font-family-字体"><a href="#5-font-family-字体" class="headerlink" title="5.font-family: ,,, ;字体"></a>5.font-family: ,,, ;字体</h3><h1 id="二-文本属性"><a href="#二-文本属性" class="headerlink" title="二.文本属性"></a>二.文本属性</h1><h3 id="1-text-align-元素内容的水平对齐方式"><a href="#1-text-align-元素内容的水平对齐方式" class="headerlink" title="1.text-align:;元素内容的水平对齐方式"></a>1.text-align:;元素内容的水平对齐方式</h3><h3 id="2-line-height-行高"><a href="#2-line-height-行高" class="headerlink" title="2.line-height:;行高"></a>2.line-height:;行高</h3><p>行高设置和盒子高度一样时可以设置垂直居中</p><h3 id="3-text-decoration-取消下划线"><a href="#3-text-decoration-取消下划线" class="headerlink" title="3.text-decoration:;取消下划线"></a>3.text-decoration:;取消下划线</h3><p>可以去除a标签自带的下划线</p><h1 id="三-列表属性"><a href="#三-列表属性" class="headerlink" title="三.列表属性"></a>三.列表属性</h1><h3 id="1-list-style-type-none-去掉li标签默认的点"><a href="#1-list-style-type-none-去掉li标签默认的点" class="headerlink" title="1.list-style-type:none;去掉li标签默认的点"></a>1.list-style-type:none;去掉li标签默认的点</h3><h1 id="四-CSS选择器"><a href="#四-CSS选择器" class="headerlink" title="四.CSS选择器"></a>四.CSS选择器</h1><h3 id="1-后代选择器"><a href="#1-后代选择器" class="headerlink" title="1.后代选择器"></a>1.后代选择器</h3><p>父元素标签 后代元素选择器 {样式声明}</p><h3 id="2-子代选择器"><a href="#2-子代选择器" class="headerlink" title="2.子代选择器"></a>2.子代选择器</h3><p>父元素标签&gt;子代元素选择器 {样式声明}</p><h3 id="3-兄弟选择器"><a href="#3-兄弟选择器" class="headerlink" title="3.兄弟选择器"></a>3.兄弟选择器</h3><p>选择器 ~选择器 {样式声明}</p><h3 id="4-相邻兄弟选择器"><a href="#4-相邻兄弟选择器" class="headerlink" title="4.相邻兄弟选择器"></a>4.相邻兄弟选择器</h3><p>选择器+选择器 {样式声明}</p><h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-28%20%E4%B8%8B%E5%8D%881.22.26.png" alt="截屏2022-11-28 下午1.22.26"></p><h1 id="五-背景属性"><a href="#五-背景属性" class="headerlink" title="五.背景属性"></a>五.背景属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">background-color:; 背景颜色</span><br><span class="line"></span><br><span class="line">默认值:transparent 透明色</span><br><span class="line"></span><br><span class="line">background-image: url(“路径”); 背景图片</span><br><span class="line"></span><br><span class="line">backgronud-repeat: no-repeat;图片是否平铺</span><br><span class="line"></span><br><span class="line">background-size:x y; 图片尺寸</span><br><span class="line"></span><br><span class="line">background-position:x y;背景位置</span><br><span class="line"></span><br><span class="line">background-attachment:fixed(不滚动)&#x2F;scroll(滚动);背景是否跟随滚动</span><br></pre></td></tr></table></figure><h1 id="六-伪类选择器"><a href="#六-伪类选择器" class="headerlink" title="六.伪类选择器"></a>六.伪类选择器</h1><p>hover伪类选择器</p><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-28%20%E4%B8%8B%E5%8D%882.53.25.png" alt="截屏2022-11-28 下午2.53.25"></p><p>first-child可以修改第一个元素</p><p>nth-child(序号)修改序号元素 even设置偶数 odd设置奇数3n可以设置倍数</p><p><img src="/../imgs/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0Day8/%E6%88%AA%E5%B1%8F2022-11-28%20%E4%B8%8B%E5%8D%883.41.06.png" alt="截屏2022-11-28 下午3.41.06"></p><h1 id="七-元素溢出"><a href="#七-元素溢出" class="headerlink" title="七.元素溢出"></a>七.元素溢出</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">white-space: nowrap; 同一行显示 不换行</span><br><span class="line"></span><br><span class="line">overflow : hidden&#x2F;auto&#x2F;scroll;</span><br><span class="line"></span><br><span class="line">text-overflow: ellipsis; 文本省略号显示</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -288,14 +488,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -338,14 +538,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -363,14 +563,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -388,14 +588,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -413,14 +613,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -488,14 +688,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -613,14 +813,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -638,14 +838,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -663,14 +863,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -688,14 +888,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -713,14 +913,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -813,14 +1013,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1651,14 +1851,14 @@
       
       <categories>
           
-          <category> 小灶 </category>
+          <category> 前端小灶 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> h5小灶 </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
