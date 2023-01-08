@@ -1,0 +1,10 @@
+
+/* 设置导航栏背景透明 */
+#page-header.nav-fixed #nav {
+	background-color: transparent;
+}
+
+/* 设置border */
+.card-widget  , .recent-post-item , #post{
+	border: 5px solid black;
+}
